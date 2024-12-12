@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ajmal Shaikh - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body class="bg-black text-white" id="body">
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="custom-cursor"></div>
+    <div id="vanta-bg"></div>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-opacity-70 bg-black backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold cyber-gradient">AS</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-gray-700">Home</a>
+                        <a href="#about" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-gray-700">About</a>
+                        <a href="#projects" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-gray-700">Projects</a>
+                        <a href="#skills" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-gray-700">Skills</a>
+                        <a href="#experience" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-gray-700">Experience</a>
+                        <a href="#contact" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:bg-gray-700">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden mobile-menu-icon cursor-pointer">
+                    <span class="block w-6 h-1 bg-white mb-1"></span>
+                    <span class="block w-6 h-1 bg-white mb-1"></span>
+                    <span class="block w-6 h-1 bg-white"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden bg-black text-white p-4 absolute top-16 left-0 right-0 z-40">
+        <a href="#home" class="block py-2">Home</a>
+        <a href="#about" class="block py-2">About</a>
+        <a href="#projects" class="block py-2">Projects</a>
+        <a href="#skills" class="block py-2">Skills</a>
+        <a href="#experience" class="block py-2">Experience</a>
+        <a href="#contact" class="block py-2">Contact</a>
+    </div>
+    
+    <!-- Hero Section -->
+    <header id="home" class="h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="text-center z-10">
+            <h1 class="text-6xl md:text-8xl font-bold mb-4 glitch-effect neon-text"
+                style="text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ffff, 0 0 40px #00ffff;"
+                data-text="Ajmal Shaikh">Ajmal Shaikh</h1>
+            <p class="text-2xl md:text-3xl mb-8 space-mono cyber-gradient">Innovative Developer | Tech Visionary</p>
+            <div class="flex justify-center space-x-4">
+                <a href="mailto:ajmal.shaikh2727@gmail.com"
+                    class="bg-transparent border-2 border-cyan-400 text-cyan-400 px-6 py-3 rounded-full hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-110">
+                    <i class="fas fa-envelope mr-2"></i>Contact Me
+                </a>
+                <a href="https://github.com/Ajmal2727" target="_blank"
+                    class="bg-transparent border-2 border-fuchsia-400 text-fuchsia-400 px-6 py-3 rounded-full hover:bg-fuchsia-400 hover:text-black transition-all duration-300 transform hover:scale-110">
+                    <i class="fab fa-github mr-2"></i>GitHub
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 cyber-gradient">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4">
+                    <p class="text-lg text-gray-300">As a passionate React Developer and Computer Engineering student, I
+                        blend cutting-edge academic knowledge with hands-on experience to create innovative digital
+                        solutions. My journey in tech is driven by a relentless curiosity and a commitment to pushing
+                        the boundaries of what's possible in web development.</p>
+                    <div class="bg-gray-800 p-4 rounded-lg neon-border">
+                        <h3 class="text-xl font-semibold mb-2 cyber-gradient">Education</h3>
+                        <p>B.E. Computer Engineering | University of Mumbai | 2021 - 2024</p>
+                        <p>Diploma in Computer Engineering | Government Polytechnic Thane | 2018 - 2021</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-gray-800 p-4 rounded-lg neon-border">
+                        <h3 class="text-xl font-semibold mb-2 cyber-gradient">15+</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg neon-border">
+                        <h3 class="text-xl font-semibold mb-2 cyber-gradient">3+</h3>
+                        <p>Years of Experience</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg neon-border">
+                        <h3 class="text-xl font-semibold mb-2 cyber-gradient">10+</h3>
+                        <p>Technologies Mastered</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg neon-border">
+                        <h3 class="text-xl font-semibold mb-2 cyber-gradient">24/7</h3>
+                        <p>Dedication to Coding</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <div class="container">
+        <h2 class="text-4xl font-bold text-center mb-12 cyber-gradient">Non Tech Professional Background</h2>
+        <div class="card-container">
+            <!-- MIS Executive Card -->
+            <div class="cyber-flip-card">
+                <div class="cyber-flip-card-inner">
+                    <div class="cyber-flip-card-front">
+                        <div>
+                            <div class="card-header">
+                                <div class="card-icon">MIS</div>
+                                <h3 class="card-title">MIS Executive</h3>
+                            </div>
+                            <p class="company">Delhivery Limited</p>
+                            <p class="date">Aug 2022 - Sep 2024</p>
+                            <p class="description">Spearheaded document verification and GST compliance initiatives,
+                                ensuring all invoices met stringent government regulations.</p>
+                        </div>
+                        <p class="flip-hint">Hover to reveal more</p>
+                    </div>
+                    <div class="cyber-flip-card-back">
+                        <div>
+                            <h3 class="card-title">Key Responsibilities</h3>
+                            <ul>
+                                <li>Optimized document verification processes, reducing processing time by 30%</li>
+                                <li>Maintained 100% compliance with GST regulations, avoiding penalties</li>
+                                <li>Collaborated with customer support to resolve 500+ complex issues monthly</li>
+                                <li>Implemented new MIS strategies, improving overall efficiency by 25%</li>
+                                <li>Trained and mentored 10 junior executives in compliance procedures</li>
+                            </ul>
+                            <h4 style="color: #ff00ff;">Core Competencies</h4>
+                            <div class="skills">
+                                <span class="skill">Advanced Microsoft Excel</span>
+                                <span class="skill">Operational Excellence</span>
+                                <span class="skill">Regulatory Compliance</span>
+                                <span class="skill">Data Analysis</span>
+                                <span class="skill">Process Optimization</span>
+                            </div>
+                        </div>
+                        <p class="flip-hint">Hover to flip back</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QC Executive Card -->
+            <div class="cyber-flip-card">
+                <div class="cyber-flip-card-inner">
+                    <div class="cyber-flip-card-front">
+                        <div>
+                            <div class="card-header">
+                                <div class="card-icon">QC</div>
+                                <h3 class="card-title">QC Executive</h3>
+                            </div>
+                            <p class="company">Varna Infra Hr & Services</p>
+                            <p class="date">Jan 2021 - Aug 2022</p>
+                            <p class="description">Led comprehensive audits of shipments, ensuring strict adherence to
+                                client specifications and industry standards.</p>
+                        </div>
+                        <p class="flip-hint">Hover to reveal more</p>
+                    </div>
+                    <div class="cyber-flip-card-back">
+                        <div>
+                            <h3 class="card-title">Key Achievements</h3>
+                            <ul>
+                                <li>Improved audit accuracy by 30% through innovative methodologies</li>
+                                <li>Led a team of 5 QC specialists, enhancing overall performance by 40%</li>
+                                <li>Implemented new QC protocols, reducing client complaints by 50%</li>
+                                <li>Conducted 20+ training sessions on LBH measurements and weight verification</li>
+                                <li>Developed a new QC checklist, adopted company-wide, increasing efficiency by 35%
+                                </li>
+                            </ul>
+                            <h4 style="color: #ff00ff;">Expertise</h4>
+                            <div class="skills">
+                                <span class="skill">Quality Management Systems</span>
+                                <span class="skill">Logistics Optimization</span>
+                                <span class="skill">Audit & Compliance</span>
+                                <span class="skill">Team Leadership</span>
+                                <span class="skill">Process Improvement</span>
+                            </div>
+                        </div>
+                        <p class="flip-hint">Hover to flip back</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 cyber-gradient">Innovative Projects</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="project-card bg-gray-900 p-6 rounded-lg shadow-lg neon-border">
+                    <h3 class="text-2xl font-semibold mb-4 cyber-gradient">MIS + ERP Dashboard</h3>
+                    <p class="text-gray-300 mb-4">Advanced management system with role-based access and API integration,
+                        streamlining organizational processes.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">React.js</span>
+                        <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">Tailwind</span>
+                        <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                        <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">Node.js</span>
+                    </div>
+                    <a href="#"
+                        class="inline-block bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white px-4 py-2 rounded-full hover:from-cyan-600 hover:to-fuchsia-600 transition-all duration-300">View
+                        Project</a>
+                </div>
+                <div class="project-card bg-gray-900 p-6 rounded-lg shadow-lg neon-border">
+                    <h3 class="text-2xl font-semibold mb-4 cyber-gradient">I-Note-Book</h3>
+                    <p class="text-gray-300 mb-4">Multi-user note-taking app with secure authentication, real-time sync,
+                        and rich text editing capabilities.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">React.js</span>
+                        <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">Node.js</span>
+                        <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">MongoDB</span>
+                    </div>
+                    <a href="#"
+                        class="inline-block bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white px-4 py-2 rounded-full hover:from-cyan-600 hover:to-fuchsia-600 transition-all duration-300">View
+                        Project</a>
+                </div>
+                <div class="project-card bg-gray-900 p-6 rounded-lg shadow-lg neon-border">
+                    <h3 class="text-2xl font-semibold mb-4 cyber-gradient">Hotel Booking Platform</h3>
+                    <p class="text-gray-300 mb-4">User-friendly hotel booking interface with location-based selection,
+                        real-time availability, and secure payment gateway integration.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">HTML</span>
+                        <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">CSS</span>
+                        <span class="bg-cyan-900 text-cyan-200 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                    </div>
+                    <a href="#"
+                        class="inline-block bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white px-4 py-2 rounded-full hover:from-cyan-600 hover:to-fuchsia-600 transition-all duration-300">View
+                        Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-900 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 cyber-gradient glitch-text">Tech Arsenal</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="skill-card p-6 bg-gray-800 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 cyber-gradient">Programming Languages</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>JavaScript</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2.5">
+                                    <div class="skill-progress-bar bg-cyan-500 h-2.5 rounded-full" style="width: 90%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>React.js</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2.5">
+                                    <div class="skill-progress-bar bg-pink-500 h-2.5 rounded-full" style="width: 85%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Node.js</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2.5">
+                                    <div class="skill-progress-bar bg-green-500 h-2.5 rounded-full" style="width: 80%;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card p-6 bg-gray-800 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 cyber-gradient">Frameworks & Libraries</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>React.js</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2.5">
+                                    <div class="skill-progress-bar bg-indigo-500 h-2.5 rounded-full"
+                                        style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Tailwind CSS</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2.5">
+                                    <div class="skill-progress-bar bg-blue-500 h-2.5 rounded-full" style="width: 85%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Express.js</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2.5">
+                                    <div class="skill-progress-bar bg-purple-500 h-2.5 rounded-full"
+                                        style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="skill-card p-6 bg-gray-800 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 cyber-gradient">Tools & Technologies</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Git</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2.5">
+                                    <div class="skill-progress-bar bg-orange-500 h-2.5 rounded-full"
+                                        style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>MongoDB</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2.5">
+                                    <div class="skill-progress-bar bg-teal-500 h-2.5 rounded-full" style="width: 80%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>RESTful APIs</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2.5">
+                                    <div class="skill-progress-bar bg-red-500 h-2.5 rounded-full" style="width: 85%;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card p-6 bg-gray-800 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold mb-4 cyber-gradient">Soft Skills</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Problem Solving</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2.5">
+                                    <div class="skill-progress-bar bg-yellow-500 h-2.5 rounded-full"
+                                        style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Team Collaboration</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2.5">
+                                    <div class="skill-progress-bar bg-green-500 h-2.5 rounded-full" style="width: 90%;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>Adaptability</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2.5">
+                                    <div class="skill-progress-bar bg-purple-500 h-2.5 rounded-full"
+                                        style="width: 85%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-12 cyber-gradient">Professional Journey</h2>
+            <div class="space-y-12">
+                <div class="relative pl-8 py-4 border-l-2 border-cyan-400 neon-border">
+                    <div class="absolute w-4 h-4 bg-cyan-400 rounded-full left-0 top-5 transform -translate-x-2"></div>
+                    <h3 class="text-2xl font-semibold mb-2 cyber-gradient">React Developer</h3>
+                    <p class="text-gray-400 mb-2">ZA Charity Feed Foundation | SEP 2024 - Present</p>
+                    <p class="text-gray-300">Led the development of 15+ diverse projects, honing skills in both frontend
+                        and backend technologies. Implemented innovative solutions to complex problems, enhancing user
+                        experiences and system efficiencies.</p>
+                </div>
+                <div class="relative pl-8 py-4 border-l-2 border-fuchsia-400 neon-border">
+                    <div class="absolute w-4 h-4 bg-fuchsia-400 rounded-full left-0 top-5 transform -translate-x-2">
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-2 cyber-gradient">Software Development Virtual Experience</h3>
+                    <p class="text-gray-400 mb-2">JP Morgan Chase & Co. | Aug 2023</p>
+                    <p class="text-gray-300">Completed four Python-based tasks, demonstrating proficiency in algorithmic
+                        thinking and problem-solving. Gained hands-on experience with version control using Git,
+                        enhancing collaborative development skills.</p>
+                </div>
+                <div class="relative pl-8 py-4 border-l-2 border-cyan-400 neon-border">
+                    <div class="absolute w-4 h-4 bg-cyan-400 rounded-full left-0 top-5 transform -translate-x-2"></div>
+                    <h3 class="text-2xl font-semibold mb-2 cyber-gradient">Web Development Apprenticeship</h3>
+                    <p class="text-gray-400 mb-2">SUMAGO INFOTECH Pvt. Ltd. | June 2020 - July 2020</p>
+                    <p class="text-gray-300">Immersed in intensive web development training, mastering HTML, CSS, and
+                        JavaScript. Developed practical skills through hands-on projects, laying a strong foundation for
+                        future web development endeavors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Contact Section -->
+ <section id="contact" class="py-20 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12 cyber-gradient text-3d">Get in Touch</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="space-y-4">
+                <p class="text-lg text-gray-300">I'm always open to new opportunities and collaborations. Feel free to reach out if you have any questions or just want to say hi!</p>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-envelope text-cyan-400 text-2xl"></i>
+                    <a href="mailto:ajmalshaikh2727@gmail.com" class="text-gray-300 hover:text-white transition-colors duration-300">ajmalshaikh2727@gmail.com</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-phone-alt text-green-400 text-2xl"></i>
+                    <a href="tel:+919136207551" class="text-gray-300 hover:text-white transition-colors duration-300">+91 91362 07551</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-map-marker-alt text-fuchsia-400 text-2xl"></i>
+                    <span class="text-gray-300">Mumbai, Maharashtra, India</span>
+                </div>
+            </div>
+            <form id="contactForm" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-400">Name</label>
+                    <input type="text" id="name" name="name" class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-400">Email</label>
+                    <input type="email" id="email" name="email" class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent" required>
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-400">Message</label>
+                    <textarea id="message" name="message" rows="4" class="mt-1 block w-full bg-gray-800 border border-gray-700 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white font-bold py-2 px-4 rounded-md hover:from-cyan-600 hover:to-fuchsia-600 transition-all duration-300 ripple">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <p class="text-gray-400">&copy; 2024 Ajmal Shaikh. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="https://www.linkedin.com/in/ajmal-shk" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300"
+                        aria-label="LinkedIn">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="https://github.com/Ajmal2727" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300"
+                        aria-label="GitHub">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300"
+                        aria-label="Twitter">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <p class="text-gray-400 glitch-effect" data-text="Crafted with ❤️">Designed and Developed By Ajmal!!!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

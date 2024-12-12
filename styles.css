@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #00ffff;
+    --secondary-color: #ff00ff;
+    --bg-color: #0a0a0a;
+    --text-color: #ffffff;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+.space-mono {
+    font-family: 'Space Mono', monospace;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    mix-blend-mode: difference;
+}
+
+/* Section Reveal Animation */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
+}
+
+.section-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover Effects */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Particle Background for Sections */
+.particle-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* Glitch Text Effect */
+.glitch-text {
+    position: relative;
+    animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+
+    2%,
+    64% {
+        transform: translate(2px, 0) skew(0deg);
+    }
+
+    4%,
+    60% {
+        transform: translate(-2px, 0) skew(0deg);
+    }
+
+    62% {
+        transform: translate(0, 0) skew(5deg);
+    }
+}
+
+
+.neon-text {
+    text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 15px var(--primary-color), 0 0 20px var(--primary-color);
+}
+
+.neon-border {
+    box-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), inset 0 0 5px var(--primary-color), inset 0 0 10px var(--primary-color);
+}
+
+.cyber-gradient {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.parallax {
+    perspective: 1px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.parallax__layer--back {
+    transform: translateZ(-1px) scale(2);
+}
+
+.parallax__layer--base {
+    transform: translateZ(0);
+}
+
+.glitch-effect {
+    position: relative;
+    animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+
+    2%,
+    64% {
+        transform: translate(2px, 0) skew(0deg);
+    }
+
+    4%,
+    60% {
+        transform: translate(-2px, 0) skew(0deg);
+    }
+
+    62% {
+        transform: translate(0, 0) skew(5deg);
+    }
+}
+
+.glitch-effect:before,
+.glitch-effect:after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+}
+
+.glitch-effect::before {
+    text-shadow: -2px 0 #00ffff;
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.glitch-effect::after {
+    text-shadow: 2px 0 #ff00ff;
+    animation: glitch-anim2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(5px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.skill-progress {
+    width: 100%;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transition: width 1s ease-in-out;
+}
+
+.project-card {
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) rotate(2deg);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+}
+
+#vanta-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+/* Cyberpunk Gradient Animation */
+@keyframes cyber-pulse {
+
+    0%,
+    100% {
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        filter: hue-rotate(45deg);
+    }
+}
+
+/* Skill Bar Animation */
+@keyframes skill-fill {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: var(--skill-width, 0%);
+    }
+}
+
+/* Neon Glow Effect for Progress Bars */
+@keyframes progress-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(0, 255, 255, 0.5),
+            0 0 10px rgba(255, 0, 255, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.7),
+            0 0 20px rgba(255, 0, 255, 0.5);
+    }
+}
+
+/* Progress Bar Fill Animation */
+@keyframes progress-fill {
+    0% {
+        width: 0;
+        background-position: 0 0;
+    }
+
+    100% {
+        width: var(--skill-width, 0%);
+        background-position: 100% 0;
+    }
+}
+
+/* Gradient Pulse Animation */
+@keyframes gradient-pulse {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Cyber Gradient Text */
+.cyber-gradient {
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #00ff00);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient-pulse 5s ease infinite;
+}
+
+/* Enhanced Progress Bar */
+.skill-progress {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* Specific Gradient Colors for Progress Bars */
+.progress-javascript {
+    background-image: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+}
+
+.progress-react {
+    background-image: linear-gradient(90deg, #6a11cb, #2575fc);
+}
+
+.progress-nodejs {
+    background-image: linear-gradient(90deg, #11998e, #38ef7d);
+}
+
+.progress-tailwind {
+    background-image: linear-gradient(90deg, #16bffd, #cb3066);
+}
+
+.skill-card {
+    transition: all 0.3s ease;
+    background: linear-gradient(145deg, rgba(45, 45, 45, 0.8), rgba(30, 30, 30, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+}
+
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.cyber-flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 550px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.cyber-flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.cyber-flip-card:hover .cyber-flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.cyber-flip-card-front,
+.cyber-flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cyber-flip-card-front {
+    background-color: #1a1a1a;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.cyber-flip-card-back {
+    background-color: #1a1a1a;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.5);
+    transform: rotateY(180deg);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(to right, #00ffff, #ff00ff);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    background: linear-gradient(to right, #00ffff, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.company {
+    color: #00ffff;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: #ff00ff;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.description {
+    color: #cccccc;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.flip-hint {
+    font-size: 0.8rem;
+    color: #00ffff;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+ul {
+    text-align: left;
+    padding-left: 20px;
+}
+
+li {
+    color: #cccccc;
+    margin-bottom: 0.5rem;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.skill {
+    background-color: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile Menu Styles */
+.mobile-menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.mobile-menu-icon span {
+    height: 3px;
+    width: 25px;
+    background-color: var(--primary-color);
+    margin-bottom: 4px;
+    transition: all 0.3s ease;
+    transform-origin: left;
+}
+
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 10, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.mobile-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-menu a {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin: 1rem 0;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.5s ease;
+}
+
+.mobile-menu.active a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-menu a:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.mobile-menu a:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.mobile-menu a:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.mobile-menu a:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.mobile-menu a:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.mobile-menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.mobile-menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-icon {
+        display: flex;
+    }
+
+    nav .hidden {
+        display: none;
+    }
+}
